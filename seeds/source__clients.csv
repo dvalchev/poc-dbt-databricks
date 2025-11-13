@@ -1,0 +1,66 @@
+ID,CLIENT_NAME,CLIENT_COUNTRY_ISO2,CITY
+1,Acme Corp,US,New York
+2,Globex Inc,CA,Toronto
+3,Initech,GB,London
+4,Umbrella Corp,DE,Berlin
+5,Stark Industries,FR,Paris
+6,Wayne Enterprises,AU,Sydney
+7,Hooli,IN,Bangalore
+8,Vehement Capital Partners,JP,Tokyo
+9,Massive Dynamic,BR,São Paulo
+10,Wonka Industries,ZA,Cape Town
+11,Tyrell Corporation,IT,Rome
+12,Oceanic Airlines,ES,Madrid
+13,Prestige Worldwide,MX,Mexico City
+14,Good Burger,NL,Amsterdam
+15,Bluth Company,SE,Stockholm
+16,Paper Street Soap Co,US,Chicago
+17,Gringotts Bank,GB,Manchester
+18,Cyberdyne Systems,DE,Hamburg
+19,Monarch Solutions,CA,Vancouver
+20,LexCorp,FR,Lyon
+21,Oscorp,AU,Melbourne
+22,Black Mesa,IN,Mumbai
+23,Vault-Tec,JP,Osaka
+24,Blue Sun Corporation,BR,Rio de Janeiro
+25,Clamp Industries,ZA,Johannesburg
+26,Virtucon,IT,Milan
+27,Globex Corporation,ES,Barcelona
+28,Rich Industries,MX,Guadalajara
+29,Spacely Sprockets,NL,Rotterdam
+30,Octan Corp,SE,Gothenburg
+31,Polymer Labs,US,San Francisco
+32,Shinra Electric Power,JP,Yokohama
+33,Westworld,GB,Birmingham
+34,Los Pollos Hermanos,MX,Monterrey
+35,Alchemax,FR,Marseille
+36,Encom,CA,Montreal
+37,Soylent Corporation,DE,Frankfurt
+38,Big Kahuna Burger,AU,Brisbane
+39,Duff Brewery,BR,Brasília
+40,Globex Mining,ZA,Pretoria
+41,Kruger Industrial Smoothing,IT,Naples
+42,Oceanic Shipping,ES,Valencia
+43,Prestige Motors,NL,Utrecht
+44,Good Times Inc,SE,Uppsala
+45,Bluth Realty,US,Los Angeles
+46,Acme Widgets,GB,Leeds
+47,Globex Foods,DE,Stuttgart
+48,Initech Solutions,CA,Calgary
+49,Umbrella Biotech,FR,Toulouse
+50,Stark Labs,AU,Perth
+51,Wayne Tech,IN,Hyderabad
+52,Hooli Ventures,JP,Sapporo
+53,Vehement Holdings,BR,Fortaleza
+54,Massive Innovations,ZA,Durban
+55,Wonka Foods,IT,Florence
+56,Tyrell Genetics,ES,Seville
+57,Oceanic Travel,MX,Puebla
+58,Prestige Consulting,NL,Eindhoven
+59,Good Burger Express,SE,Malmo
+60,Bluth Construction,US,Houston
+61,Acme Logistics,GB,Glasgow
+62,Globex Energy,DE,Düsseldorf
+63,Initech Manufacturing,CA,Ottawa
+64,Umbrella Health,FR,Nice
+65,Stark Engineering,AU,Adelaide

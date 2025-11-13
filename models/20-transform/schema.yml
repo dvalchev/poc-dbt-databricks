@@ -1,0 +1,124 @@
+models:
+  - name: dim__client__core
+    description: The dim__client__core model provides a unified view of client information by combining data from the raw__clients table and the meta__country_mapping table. It includes key details such as client ID, name, city, and the corresponding country name, enabling users to analyze client data across geographical locations.
+    columns:
+      - name: client_id
+        description: A unique identifier assigned to each client. This is used to distinguish clients within the system.
+        data_type: bigint
+        data_tests:
+          - not_null
+          - unique
+      - name: client_name
+        description: The name of the client. This is typically the official name or designation of the client.
+        data_type: string
+      - name: city
+        description: The city where the client is located. This provides geographical context for the client.
+        data_type: string
+      - name: country_name
+        description: The name of the country associated with the client, derived from the country mapping table based on the client's ISO2 country code.
+        data_type: string
+        data_tests:
+          - not_null
+  ######################################################################################################################################################
+  - name: dim__product__core
+    description: The dim__product__core model provides a curated view of product data, including product identifiers, names, categories, and prices. It is designed for general users to easily access and analyze product-related information. The data is sourced from the raw__products table in the GHOCURATEDRAW_DEV_CLONE_20250930_DB database and transformed to ensure consistency and usability.
+    columns:
+      - name: product_id
+        description: A unique identifier assigned to each product. This ID is used to distinguish individual products in the database.
+        data_type: bigint
+        data_tests:
+          - not_null
+          - unique
+      - name: product_name
+        description: The name of the product as listed in the database. This is typically the official name used for the product.
+        data_type: string
+      - name: product_category
+        description: The category to which the product belongs, such as electronics, clothing, or furniture. This helps in organizing and filtering products.
+        data_type: string
+        data_tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - Electronics
+                  - Hardware
+                  - Home
+      - name: price
+        description: The monetary value of the product, represented in the default currency. This column helps users understand the cost associated with each product.
+        data_type: float
+  ######################################################################################################################################################
+  - name: fact__sales__core
+    description: The fact__sales__core model provides a comprehensive view of sales transactions by combining raw sales data with enriched client and product information. It includes details such as sale ID, sale date, client and product identifiers, client demographics, product attributes, and calculated metrics like total sale amount. This model is designed to support general users in analyzing sales performance, client behavior, and product trends.
+    columns:
+      - name: sale_id
+        description: A unique identifier for each sale transaction. This ID helps users track and reference specific sales within the dataset.
+        data_type: bigint
+        data_tests:
+          - not_null
+          - unique
+      - name: sale_date
+        description: The date on which the sale occurred. This column allows users to analyze sales trends over time.
+        data_type: date
+        data_tests:
+          - not_null
+      - name: client_id
+        description: A unique identifier for the client associated with the sale. This ID helps users link sales data to specific clients for further analysis.
+        data_type: bigint
+        data_tests:
+          - not_null
+      - name: product_id
+        description: A unique identifier for each product. This ID is used to link sales data with product details.
+        data_type: bigint
+        data_tests:
+          - not_null
+      - name: quantity
+        description: The bigint of units of the product sold in a particular transaction. This indicates the volume of the product purchased by the client.
+        data_type: bigint
+  ######################################################################################################################################################
+  - name: obt__sales__core
+    description: The fact__sales__core model provides a comprehensive view of sales transactions by combining raw sales data with enriched client and product information. It includes details such as sale ID, sale date, client and product identifiers, client demographics, product attributes, and calculated metrics like total sale amount. This model is designed to support general users in analyzing sales performance, client behavior, and product trends.
+    columns:
+      - name: sale_id
+        description: A unique identifier for each sale transaction. This ID helps users track and reference specific sales within the dataset.
+        data_type: bigint
+        data_tests:
+          - not_null
+          - unique
+      - name: sale_date
+        description: The date on which the sale occurred. This column allows users to analyze sales trends over time.
+        data_type: date
+        data_tests:
+          - not_null
+      - name: client_id
+        description: A unique identifier for the client associated with the sale. This ID helps users link sales data to specific clients for further analysis.
+        data_type: bigint
+      - name: client_name
+        description: The name of the client who made the purchase. This helps identify the individual or organization associated with the sale.
+        data_type: string
+        data_tests:
+          - not_null
+      - name: city
+        description: The city where the client is located. This provides geographical context for the client's location.
+        data_type: string
+      - name: country_name
+        description: The country where the client resides. This is useful for understanding the broader geographical distribution of sales.
+        data_type: string
+      - name: product_id
+        description: A unique identifier for each product. This ID is used to link sales data with product details.
+        data_type: bigint
+      - name: product_name
+        description: The name of the product being sold. This provides a clear description of the item.
+        data_type: string
+        data_tests:
+          - not_null
+      - name: product_category
+        description: The category to which the product belongs, helping to group and analyze sales by product type.
+        data_type: string
+      - name: price
+        description: The cost of a single unit of the product being sold. This value is derived from the product information and represents the unit price at the time of sale.
+        data_type: float
+      - name: quantity
+        description: The bigint of units of the product sold in a particular transaction. This indicates the volume of the product purchased by the client.
+        data_type: bigint
+      - name: total_sale_amount
+        description: The total revenue generated from the sale, calculated as the product of PRICE and QUANTITY. This represents the monetary value of the transaction.
+        data_type: float
