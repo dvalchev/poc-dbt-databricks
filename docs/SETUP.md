@@ -7,11 +7,11 @@ Press Ctrl-Shift-P, search for "Python: Select Interpreter"
 Select the `.\.venv\Scripts\python.exe` Recommended environemnt
 ### 4. Create a Databricks personal access token
 In Databricks workspace, go to your profile->Settings->Developer->Access Tokens Manage:
-![DBX manage access tokens](docs/assets/dbx_manages_access_tokens.png)
+![DBX manage access tokens](assets/dbx_manages_access_tokens.png)
 Generate a new access token and make sure to copy it to a safe place. You will not be able to see it again once you click "Done"!
 ### 5. Check warehouse connectivity details
 Take a note on the SQL warehouse configuration's connection information:
-![DBX warehouse connection details](docs/assets/dbx_warehouse_connection_details.png)
+![DBX warehouse connection details](assets/dbx_warehouse_connection_details.png)
 ### 6. Create local profiles.yml file
 Run the following commands in a terminal window:
 ```cmd
